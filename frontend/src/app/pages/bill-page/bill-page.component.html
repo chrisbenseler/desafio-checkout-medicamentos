@@ -1,7 +1,5 @@
 <section *ngIf="billData">
 
-
-
   <ul class="list-group">
     <li class="list-group-item">
       <div class="col-2">
@@ -9,7 +7,7 @@
       </div>
       <div class="col-10">
         <h3>{{ billData.drugstore.name }}</h3>
-        <p>Total: R${{ billData.bill.total }}</p>
+        <p>Total: {{ billData.bill.total | formatCurrency }}</p>
       </div>
     </li>
     <li class="list-group-item" *ngFor="let medicine of billData.bill.medicines">
@@ -19,7 +17,7 @@
       <div class="col-10">
         {{ medicine.amount }} unidade(s) <br />
         <strong>{{ medicine.name }}</strong> <br />
-        R${{ medicine.total }}
+        {{ medicine.total | formatCurrency }}
       </div>
     </li>
   </ul>

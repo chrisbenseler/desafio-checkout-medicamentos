@@ -15,12 +15,14 @@ import { PrescriptionPageComponent } from './pages/prescription-page/prescriptio
 import { BillPageComponent } from './pages/bill-page/bill-page.component';
 
 import { BillExistsGuard } from './guards/bill-exists.guard';
+import { FormatCurrencyPipe } from './pipes/format-currency.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrescriptionPageComponent,
-    BillPageComponent
+    BillPageComponent,
+    FormatCurrencyPipe
   ],
   imports: [
     BrowserModule,
