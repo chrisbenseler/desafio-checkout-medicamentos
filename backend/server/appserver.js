@@ -18,24 +18,24 @@ const Appserver = function({ port, drugstoreService }) {
   app.use(bodyParser.json())
   app.use(allowCrossDomain)
 
-  app.listen(port)
+  
 
-  app.route('/farmacias').get( (req, res) => {
-    drugstoreService
-    .getDrugstores()
-    .then( results => {
-      
-      const promises = results.data.map( f => {
-        return drugstoreService
-        .getDrugstore(f.id)
-      })
+  // get initial data
+  drugstoreService
+  .getDrugstores()
+  .then( results => {
+    
+    const promises = results.data.map( f => {
+      return drugstoreService
+      .getDrugstore(f.id)
+    })
 
-      Promise.all(promises).then( args => {
-        drugstores = args.map( d => drugstoreService.normalizeDrugstore(d) )
-        res.json(drugstores.length)
-      })
+    Promise.all(promises).then( args => {
+      drugstores = args.map( d => drugstoreService.normalizeDrugstore(d) )
+      app.listen(port)
     })
   })
+
 
   app.route('/farmacias/calculo').post( (req, res) => {
 

@@ -11,10 +11,6 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
-  loadDrugstores() {
-    return this.http.get('http://localhost:3001/farmacias/');
-  }
-
   calculateBill(medicines) {
     return this.http.post('http://localhost:3001/farmacias/calculo', { medicines });
   }
