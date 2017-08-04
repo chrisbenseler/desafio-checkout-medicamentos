@@ -1,17 +1,20 @@
-<p>
-  prescription-page works!
+<p class="subtitle">
+  prescrição criada em {{ prescription.date }}
 </p>
 
-<ul>
-  <li *ngFor="let item of prescription">
-    {{ item.amount }} unidade(s) - {{ item.name }}
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of prescription.items">
+    <fa name="flask"></fa>
+    {{ item.amount }} unidade(s) <br /> {{ item.name }}
   </li>
 </ul>
 
-<p>
-  disclaimer
+<p class="disclaimer">
+  A prescrição Digital Memed não dispensa a apresentação de sua versão impressa à farmácia. O médico repsonsável
+  por esta prescrição não possui qyalquer tipo de vínculo com os preços e/ou farmácias apresentados.
 </p>
 
-<button (click)="getBill($event)">
-  find me
+<button (click)="getBill($event)" class="btn btn-primary btn-block">
+  <strong>Encontrar farmácia</strong><br />
+  Serviço oferecido por Memed
 </button>

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 
 import { AppComponent } from './app.component';
 
@@ -25,7 +26,8 @@ import { BillExistsGuard } from './guards/bill-exists.guard';
     BrowserModule,
     FormsModule,
     RouterModule.forRoot( appRoutes ),
-    HttpClientModule
+    HttpClientModule,
+    AngularFontAwesomeModule
   ],
   providers: [ ApiService, BillExistsGuard ],
   bootstrap: [ AppComponent ]
