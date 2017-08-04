@@ -4,8 +4,15 @@
 
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let item of prescription.items">
-    <fa name="flask"></fa>
-    {{ item.amount }} unidade(s) <br /> {{ item.name }}
+
+      <div class="col-2">
+        <fa name="flask"></fa>
+      </div>
+      <div class="col-10">
+        {{ item.amount }} unidade(s) <br />
+        <strong>{{ item.name }}</strong>
+      </div>
+
   </li>
 </ul>
 

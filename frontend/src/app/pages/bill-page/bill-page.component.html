@@ -1,16 +1,26 @@
-<p>
-  bill-page works!
-</p>
 <section *ngIf="billData">
 
-  <header>
-    <h3>{{ billData.drugstore.name }}</h3>
-    <p>Total: {{ billData.bill.total }}</p>
-  </header>
 
-  <ul>
-    <li *ngFor="let medicine of billData.bill.medicines">
-      {{ medicine.amount }} unidade(s) - {{ medicine.name }} - {{ medicine.total }}
+
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div class="col-2">
+        <fa name="flag-o"></fa>
+      </div>
+      <div class="col-10">
+        <h3>{{ billData.drugstore.name }}</h3>
+        <p>Total: R${{ billData.bill.total }}</p>
+      </div>
+    </li>
+    <li class="list-group-item" *ngFor="let medicine of billData.bill.medicines">
+      <div class="col-2">
+        <fa name="flask"></fa>
+      </div>
+      <div class="col-10">
+        {{ medicine.amount }} unidade(s) <br />
+        <strong>{{ medicine.name }}</strong> <br />
+        R${{ medicine.total }}
+      </div>
     </li>
   </ul>
 
