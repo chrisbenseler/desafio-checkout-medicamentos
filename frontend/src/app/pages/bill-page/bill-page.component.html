@@ -1,0 +1,17 @@
+<p>
+  bill-page works!
+</p>
+<section *ngIf="billData">
+
+  <header>
+    <h3>{{ billData.drugstore.name }}</h3>
+    <p>Total: {{ billData.bill.total }}</p>
+  </header>
+
+  <ul>
+    <li *ngFor="let medicine of billData.bill.medicines">
+      {{ medicine.amount }} unidade(s) - {{ medicine.name }} - {{ medicine.total }}
+    </li>
+  </ul>
+
+</section>

@@ -1,20 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
+import { ApiService } from './services/api.service';
+
+import { appRoutes } from './app.routes';
+
+import { PrescriptionPageComponent } from './pages/prescription-page/prescription-page.component';
+import { BillPageComponent } from './pages/bill-page/bill-page.component';
+
+import { BillExistsGuard } from './guards/bill-exists.guard';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PrescriptionPageComponent,
+    BillPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    RouterModule.forRoot( appRoutes ),
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ ApiService, BillExistsGuard ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -1,0 +1,17 @@
+<p>
+  prescription-page works!
+</p>
+
+<ul>
+  <li *ngFor="let item of prescription">
+    {{ item.amount }} unidade(s) - {{ item.name }}
+  </li>
+</ul>
+
+<p>
+  disclaimer
+</p>
+
+<button (click)="getBill($event)">
+  find me
+</button>
