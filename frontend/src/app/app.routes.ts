@@ -7,5 +7,6 @@ import { BillExistsGuard } from './guards/bill-exists.guard';
 
 export const appRoutes: Routes = [
   { path: 'prescription', component: PrescriptionPageComponent },
-  { path: 'bill', canActivate: [ BillExistsGuard ], component: BillPageComponent }
+  { path: 'bill', canActivate: [ BillExistsGuard ], component: BillPageComponent },
+  { path: '', redirectTo: '/prescription', pathMatch: 'full' },
 ];
