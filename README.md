@@ -7,7 +7,7 @@ Backend
 - fica na pasta ./backend
 - deve rodar 'npm install' dentro dela para instalar as dependências
 - para rodar o serviço, 'nodemon index.js'; o serviço irá pro ar em http://localhost:3001
-- pode ainda, ser usado qualquer outro runner de node
+- pode ainda, ser usado qualquer outro runner de scripts Node, como forever ou, mesmo, através do próprio node (com 'node index.js')
 
 Frontend
 ========
