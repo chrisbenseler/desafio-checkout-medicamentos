@@ -6,8 +6,8 @@
         <fa name="flag-o"></fa>
       </div>
       <div class="col-10">
-        <strong>{{ billData.drugstore.name }}</strong> (a {{ this.distance }} metros)
-        <p>Total: {{ billData.bill.total | formatCurrency }}</p>
+        <strong>{{ billData.drugstore.name }}</strong> (a {{ this.distance }} metros)<br />
+        Total: <span class="price">{{ billData.bill.total | formatCurrency }}</span>
       </div>
     </li>
     <li class="list-group-item" *ngFor="let medicine of billData.bill.medicines">
@@ -17,9 +17,14 @@
       <div class="col-10">
         {{ medicine.amount }} unidade(s) <br />
         <strong>{{ medicine.name }}</strong> <br />
-        {{ medicine.total | formatCurrency }}
+        <span class="price">{{ medicine.total | formatCurrency }}</span>
       </div>
     </li>
   </ul>
 
 </section>
+
+<p class="disclaimer">
+  A prescrição Digital Memed não dispensa a apresentação de sua versão impressa à farmácia. O médico repsonsável
+  por esta prescrição não possui qyalquer tipo de vínculo com os preços e/ou farmácias apresentados.
+</p>
