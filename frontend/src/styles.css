@@ -1,2 +1,17 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "../node_modules/font-awesome/css/font-awesome.css";
+
+body {
+  color: #666666;
+}
+
+@font-face {
+  font-family: "montserrat";
+  src:url("./assets/font/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, body, button {
+  font-family: montserrat;
+}

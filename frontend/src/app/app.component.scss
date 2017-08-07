@@ -1,5 +1,18 @@
 header {
-  background-color: #FAFAFA;
+  background-color: #333333;
   text-align: center;
   padding: 10px 0;
+
+  img {
+    height: 30px;
+  }
+}
+
+.backbutton {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  font-size: 1.8em;
+  cursor: pointer;
+  color: #FFFFFF;
 }
