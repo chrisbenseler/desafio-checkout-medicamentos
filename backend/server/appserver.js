@@ -18,8 +18,6 @@ const Appserver = function({ port, drugstoreService }) {
   app.use(bodyParser.json())
   app.use(allowCrossDomain)
 
-  
-
   // get initial data
   drugstoreService
   .getDrugstores()
@@ -35,7 +33,6 @@ const Appserver = function({ port, drugstoreService }) {
       app.listen(port)
     })
   })
-
 
   app.route('/farmacias/calculo').post( (req, res) => {
 

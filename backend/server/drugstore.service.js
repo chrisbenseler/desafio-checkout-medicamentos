@@ -1,6 +1,5 @@
 const fetch = require('node-fetch')
 
-
 const normalizeDrugstore = farmacia => {
   return {
       id: farmacia.data.id,
