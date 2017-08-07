@@ -21,3 +21,11 @@ p.disclaimer {
   font-size: 0.8em;
   margin-top: 20px;
 }
+
+.btn-primary {
+  background-color: #00a6bf;
+}
+.btn-primary:hover {
+  background-color: #00a6bf;
+  opacity: 0.8;
+}
