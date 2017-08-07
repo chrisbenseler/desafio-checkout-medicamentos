@@ -10,6 +10,8 @@ import { ApiService } from '../../services/api.service';
 export class BillPageComponent implements OnInit {
 
   billData: any = null;
+  userPosition = { lat: -23.5648304, lng: -46.6436604 };
+  distance: number = null;
 
   constructor(
     private apiservice: ApiService,
@@ -19,6 +21,15 @@ export class BillPageComponent implements OnInit {
 
     this.billData = this.apiservice.lastBill;
 
+    const distance = this.apiservice.getDistanceFromLatLonInKm(
+      this.userPosition.lat,
+      this.userPosition.lng,
+      this.billData.drugstore.position.lat,
+      this.billData.drugstore.position.lng
+    );
+
+    this.distance = Math.round(distance * 1000);
+    console.log(this.distance)
   }
 
 }

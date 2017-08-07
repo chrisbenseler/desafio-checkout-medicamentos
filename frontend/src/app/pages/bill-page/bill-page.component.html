@@ -6,7 +6,7 @@
         <fa name="flag-o"></fa>
       </div>
       <div class="col-10">
-        <h3>{{ billData.drugstore.name }}</h3>
+        <strong>{{ billData.drugstore.name }}</strong> (a {{ this.distance }} metros)
         <p>Total: {{ billData.bill.total | formatCurrency }}</p>
       </div>
     </li>
