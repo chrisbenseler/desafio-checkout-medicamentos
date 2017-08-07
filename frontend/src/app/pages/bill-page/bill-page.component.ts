@@ -29,7 +29,6 @@ export class BillPageComponent implements OnInit {
     );
 
     this.distance = Math.round(distance * 1000);
-    console.log(this.distance)
   }
 
 }

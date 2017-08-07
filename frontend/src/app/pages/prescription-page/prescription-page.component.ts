@@ -17,7 +17,7 @@ export class PrescriptionPageComponent implements OnInit {
       { name: 'Água para injeção 1mL', amount: 1},
       { name: 'Betaserc 16mg', amount: 1}
     ]
-  }
+  };
 
   constructor(
     private apiservice: ApiService,
@@ -32,7 +32,7 @@ export class PrescriptionPageComponent implements OnInit {
     this.apiservice.calculateBill(this.prescription.items).subscribe( data => {
       this.apiservice.lastBill = data;
       this.router.navigate(['bill']);
-    })
+    });
   }
 
 }

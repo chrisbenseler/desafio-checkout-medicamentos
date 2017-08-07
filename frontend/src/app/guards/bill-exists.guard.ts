@@ -15,11 +15,11 @@ export class BillExistsGuard implements CanActivate {
   ) {}
 
   canActivate(): Observable<boolean> {
-    if(this.apiService.lastBill) {
-  	  return of(true)
+    if (this.apiService.lastBill) {
+      return of(true);
     } else {
-  	  this.router.navigate(['prescription']);
-  	  return of(false);
+      this.router.navigate(['prescription']);
+      return of(false);
     }
   }
 
